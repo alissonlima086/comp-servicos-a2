@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package email;
+
+service EmailService {
+  rpc AddEmail(AddEmailRequest) returns (AddEmailResponse);
+}
+
+message AddEmailRequest {
+  string email = 1;
+}
+
+message AddEmailResponse {
+  bool success = 1;
+}

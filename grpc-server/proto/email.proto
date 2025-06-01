@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package email;
+
+option go_package = "proto/";
+
+service EmailService {
+  rpc AddEmail (EmailRequest) returns (EmailResponse);
+  rpc ListEmails (Empty) returns (EmailListResponse);
+}
+
+message EmailRequest {
+  string email = 1;
+}
+
+message EmailResponse {
+  string message = 1;
+  bool success = 2;
+}
+
+message Empty {}
+
+message EmailListResponse {
+  repeated string emails = 1;
+}
